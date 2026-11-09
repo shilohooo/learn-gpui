@@ -1,0 +1,72 @@
+// use gpui_kit::component::button::{Button, ButtonVariants};
+// use gpui_kit::*;
+// 
+// /// Unit 结构体，不包含字段
+// struct HelloWorld;
+// 
+// /// Render - 告诉 GPUI 如何绘制界面
+// impl Render for HelloWorld {
+//     /// 实现 Render trait，返回一个元素树
+//     ///
+//     /// 包含一段文字和按钮的 div
+//     ///
+//     /// Context<Self> 后续可以用于处理状态和事件
+//     ///
+//     /// 该函数返回一个可以转换为 GPUI ELement 的类型
+//     fn render(&mut self, _window: &mut Window, _cx: &mut Context<Self>) -> impl IntoElement {
+//         div()
+//             // div 的样式
+//             .flex()
+//             // .flex_col()
+//             .flex_row()
+//             .size_full()
+//             .items_center()
+//             .justify_center()
+//             .gap_2()
+//             // 背景颜色
+//             .bg(rgb(0x099FFF))
+//             // 字体颜色
+//             .text_color(rgb(0xFFFFFF))
+//             // 添加子元素
+//             .child(
+//                 div()
+//                     // 字体大小
+//                     .text_2xl()
+//                     .child("我的第一个 Rust GUI 程序!"),
+//             )
+//             .child(
+//                 div()
+//                     .text_size(px(14.0))
+//                     // .text_color(rgb(0xFFFFFF))
+//                     .child("这里是副标题..."),
+//             )
+//             .child(div().text_xs().child("Powered by Rust + GPUI"))
+//             .child(
+//                 Button::new("hello")
+//                     .primary()
+//                     .label("Click me:)")
+//                     .on_click(|_, _, _| println!("Clicked!")),
+//             )
+//     }
+// }
+// 
+// /// # gpui-kit
+// ///
+// /// 我的第一个 GPUI 应用
+// fn main() {
+//     // 创建应用
+//     application()
+//         // 注册沉默图片资源
+//         .with_assets(assets::Assets)
+//         // 应用启动入口
+//         .run(|cx| {
+//             // 初始化
+//             init(cx);
+//             // 打开窗口，使用默认的配置
+//             open_window(WindowOptions::default(), cx, |_, cx|
+//                 // 创建 Entity，并传递一个根视图的数据实例
+//                 // GPUI 使用 Entity 管理有状态的视图对象
+//                 cx.new(|_| HelloWorld))
+//             .expect("Failed to open window");
+//         });
+// }
